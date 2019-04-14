@@ -1,0 +1,18 @@
+### Login test
+
+POST http://localhost:3000/graphql
+Content-Type: application/json
+
+{
+  "query": "query {login(email:\"example@example.com\", password: \"test\") { token }}"
+}
+
+### Mutation test
+
+POST http://localhost:3000/graphql
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1Yzg2ZTQ4ODkxYWY4ZDE2YTA5MDA0YzAiLCJlbWFpbCI6ImV4YW1wbGVAZXhhbXBsZS5jb20iLCJpYXQiOjE1NTI1MTQ2MjAsImV4cCI6MTU1MjUxODIyMH0.Vb0iWg6w0C32GnTuOhA_v-LoVCOZMQj5qOPaEXRXZCM
+
+{
+  "query": "mutation { createEvent(eventInput: {title: \"Should work\", description: \"This now works\", price: 5.55, date: \"2019-03-12T21:36:54.927Z\"}) {_id title}}"
+}
